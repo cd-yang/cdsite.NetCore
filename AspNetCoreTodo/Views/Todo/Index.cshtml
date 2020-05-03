@@ -20,7 +20,13 @@
         @foreach (var item in Model.Items)
         {
             <tr>
-                <td><input type="checkbox" class="done-checkbox"></td>
+                @* <td><input type="checkbox" class="done-checkbox"></td> *@
+                <td>
+                    <form asp-action="MarkDone" method="POST">
+                        <input type="checkbox" class="done-checkbox">
+                        <input type="hidden" name="id" value="@item.Id">
+                    </form>
+                </td>
                 <td>@item.Title</td>
                 <td>@item.DueAt.Humanize()</td>
             </tr>
