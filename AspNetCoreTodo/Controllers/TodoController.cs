@@ -3,9 +3,11 @@ using System;
 using Microsoft.AspNetCore.Mvc;
 using AspNetCoreTodo.Models;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AspNetCoreTodo.Controllers
 {
+    [Authorize]
     public class TodoController : Controller
     {
         private readonly ITodoItemService _todoItemService;
@@ -42,10 +44,11 @@ namespace AspNetCoreTodo.Controllers
             return RedirectToAction("Index");
         }
 
-        public async Task<IActionResult> MarkDone(Guid id){
+        public async Task<IActionResult> MarkDone(Guid id)
+        {
             if (id == Guid.Empty)
                 return RedirectToAction("Index");
-            
+
             var success = await _todoItemService.MarkDoneAsync(id);
             if (!success)
                 return BadRequest("Could not mark item as done.");
