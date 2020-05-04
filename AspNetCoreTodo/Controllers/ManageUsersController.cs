@@ -33,5 +33,21 @@ namespace AspNetCoreTodo.Controllers
 
             return View(model);
         }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteUser(string id)  // param name "id" must be the same with POST
+        {
+            var user = await _userManager.FindByIdAsync(id);
+
+            var isAdmin = user != null && await _userManager.IsInRoleAsync(user, Constants.AdministratorRole);
+            if (isAdmin)
+                return RedirectToAction("Index");
+
+            var r = await _userManager.DeleteAsync(user);
+            if (r.Succeeded)
+                return RedirectToAction("Index");
+            else
+                return BadRequest("Delete user failed.");
+        }
     }
 }
