@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AspNetCoreTodo.Controllers
 {
-    [Authorize(Roles = "Administrator")]
+    [Authorize(Roles = Constants.AdministratorRole)]
     public class ManageUsersController : Controller
     {
         private readonly UserManager<IdentityUser> _userManager;
@@ -20,7 +20,7 @@ namespace AspNetCoreTodo.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var admins = (await _userManager.GetUsersInRoleAsync("Administrator"))
+            var admins = (await _userManager.GetUsersInRoleAsync(Constants.AdministratorRole))
             .ToArray();
 
             var everyone = await _userManager.Users.ToArrayAsync();

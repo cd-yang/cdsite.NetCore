@@ -32,7 +32,13 @@ namespace AspNetCoreTodo
                 options.UseSqlite(
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+                .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            services.AddAuthorization(options => {
+                options.AddPolicy(Constants.AdministratorRole, policy => policy.RequireClaim("dummy"));
+            });
+
             services.AddControllersWithViews();
             services.AddRazorPages();
 
