@@ -2,11 +2,13 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
-using AspNetCoreTodo.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using AspNetCoreTodo.Data;
 using AspNetCoreTodo.Services;
+using Microsoft.OpenApi.Models;
+using System;
 
 namespace AspNetCoreTodo
 {
@@ -40,6 +42,25 @@ namespace AspNetCoreTodo
             services.AddRazorPages();
 
             services.AddScoped<ITodoItemService, TodoItemService>();
+
+            #region Swagger
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Version = "v0.0.1",
+                    Title = "Todo Tool API",
+                    Description = "框架说明文档",
+                    TermsOfService = new Uri("https://cd-yang.com"),
+                    Contact = new OpenApiContact
+                    {
+                        Name = "cd-yang", 
+                        Email = "yang-caidong@foxmail.com",
+                        Url =new Uri("https://cd-yang.com")
+                    }
+                });
+            });
+            #endregion
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -49,6 +70,15 @@ namespace AspNetCoreTodo
             {
                 app.UseDeveloperExceptionPage();
                 app.UseDatabaseErrorPage();
+
+                #region Swagger
+                app.UseSwagger();
+                app.UseSwaggerUI(c =>
+                {
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "ApiHelp V1");
+                    c.RoutePrefix = ""; // 首页显示 Swagger
+                });
+                #endregion
             }
             else
             {
