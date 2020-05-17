@@ -9,6 +9,7 @@ using AspNetCoreTodo.Data;
 using AspNetCoreTodo.Services;
 using Microsoft.OpenApi.Models;
 using System;
+using System.IO;
 
 namespace AspNetCoreTodo
 {
@@ -59,6 +60,9 @@ namespace AspNetCoreTodo
                         Url =new Uri("https://cd-yang.com")
                     }
                 });
+
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, "AspNetCoreTodo.xml");
+                c.IncludeXmlComments(xmlPath);
             });
             #endregion
         }

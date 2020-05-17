@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AspNetCoreTodo</name>
+    </assembly>
+    <members>
+        <member name="T:AspNetCoreTodo.Controllers.BlogController">
+            <summary>
+            博客管理
+            </summary>
+        </member>
+        <member name="M:AspNetCoreTodo.Controllers.BlogController.Get(System.Int32,System.Int32)">
+            <summary>
+            Sum 接口
+            </summary>
+            <param name="i"></param>
+            <param name="j"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
