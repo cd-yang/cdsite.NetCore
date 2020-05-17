@@ -1,8 +1,8 @@
-﻿using IRepository;
-using IService;
-using Repository;
+﻿using AspNetCoreTodo.IRepository;
+using AspNetCoreTodo.IService;
+using AspNetCoreTodo.Repository;
 
-namespace Service
+namespace AspNetCoreTodo.Service
 {
     public class AdvertisementService : IAdvertisementService
     {

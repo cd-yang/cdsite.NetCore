@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Model.Model
+namespace AspNetCoreTodo.Model.Model
 {
     public class Advertisement
     {

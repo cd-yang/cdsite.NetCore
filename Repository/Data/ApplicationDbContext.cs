@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using AspNetCoreTodo.Models;
+﻿using AspNetCoreTodo.Model.Model;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace AspNetCoreTodo.Data
+namespace AspNetCoreTodo.Repository.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {

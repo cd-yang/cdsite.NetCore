@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace AspNetCoreTodo.Data.Migrations
+namespace AspNetCoreTodo.Repository.Data.Migrations
 {
     public partial class AddItemUserId : Migration
     {

@@ -1,10 +1,9 @@
-
 using System;
 using System.Threading.Tasks;
-using AspNetCoreTodo.Models;
+using AspNetCoreTodo.Model.Model;
 using Microsoft.AspNetCore.Identity;
 
-namespace AspNetCoreTodo.Services
+namespace AspNetCoreTodo.IService
 {
     public interface ITodoItemService
     {

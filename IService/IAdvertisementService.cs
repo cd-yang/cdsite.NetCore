@@ -1,4 +1,4 @@
-﻿namespace IService
+﻿namespace AspNetCoreTodo.IService
 {
     public interface IAdvertisementService
     {

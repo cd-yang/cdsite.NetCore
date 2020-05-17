@@ -5,8 +5,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using AspNetCoreTodo.Data;
-using AspNetCoreTodo.Services;
+using AspNetCoreTodo.Repository.Data;
+using AspNetCoreTodo.IService;
+using AspNetCoreTodo.Service;
 using Microsoft.OpenApi.Models;
 using System;
 using System.IO;
@@ -76,12 +77,12 @@ namespace AspNetCoreTodo
                 app.UseDatabaseErrorPage();
 
                 #region Swagger
-                app.UseSwagger();
-                app.UseSwaggerUI(c =>
-                {
-                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "ApiHelp V1");
-                    c.RoutePrefix = ""; // 首页显示 Swagger
-                });
+                //app.UseSwagger();
+                //app.UseSwaggerUI(c =>
+                //{
+                //    c.SwaggerEndpoint("/swagger/v1/swagger.json", "ApiHelp V1");
+                //    c.RoutePrefix = ""; // 首页显示 Swagger
+                //});
                 #endregion
             }
             else

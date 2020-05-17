@@ -1,7 +1,8 @@
-using AspNetCoreTodo.Services;
+using AspNetCoreTodo.IService;
 using System;
 using Microsoft.AspNetCore.Mvc;
-using AspNetCoreTodo.Models;
+using AspNetCoreTodo.Model.ViewModel;
+using AspNetCoreTodo.Model.Model;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;

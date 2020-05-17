@@ -1,8 +1,8 @@
 using System;
 using System.Threading.Tasks;
-using AspNetCoreTodo.Data;
-using AspNetCoreTodo.Models;
-using AspNetCoreTodo.Services;
+using AspNetCoreTodo.Repository.Data;
+using AspNetCoreTodo.Model;
+using AspNetCoreTodo.Service;
 using Microsoft.EntityFrameworkCore;
 using Xunit;
 //using Microsoft.EntityFrameworkCore.InMemory;
@@ -16,7 +16,7 @@ namespace AspNetCoreTodo.UnitTests
     public class TodoItemServiceShould
     {
         [Fact]
-        public async Task AddNewItem()
+        public void AddNewItem()
         {
             //var options = new DbContextOptionsBuilder<ApplicationDbContext>()
             //    .UseInMemoryDatabase(databaseName: "Test_AddNewItem").Options;
@@ -39,7 +39,7 @@ namespace AspNetCoreTodo.UnitTests
             //using (var inMemoryContext = new ApplicationDbContext(options))
             //{
             //    Assert.Equal(1, await inMemoryContext.Items.CountAsync());
-                
+
             //    var item = await inMemoryContext.Items.FirstAsync();
             //    Assert.Equal("fake-000", item.UserId);
             //    Assert.Equal("Testing?", item.Title);

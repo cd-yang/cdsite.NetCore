@@ -1,10 +1,10 @@
-﻿using IRepository;
-using Model.Model;
+﻿using AspNetCoreTodo.Model.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
+using AspNetCoreTodo.IRepository;
 
-namespace Repository
+namespace AspNetCoreTodo.Repository
 {
     public class AdvertisementRepository : IAdvertisementRepository
     {

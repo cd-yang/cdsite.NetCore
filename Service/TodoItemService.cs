@@ -1,12 +1,13 @@
 using System;
 using System.Linq;
 using System.Threading.Tasks;
-using AspNetCoreTodo.Data;
-using AspNetCoreTodo.Models;
+using AspNetCoreTodo.Repository.Data;
+using AspNetCoreTodo.IService;
+using AspNetCoreTodo.Model.Model;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
-namespace AspNetCoreTodo.Services
+namespace AspNetCoreTodo.Service
 {
     public class TodoItemService : ITodoItemService
     {

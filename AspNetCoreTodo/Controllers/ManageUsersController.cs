@@ -1,6 +1,6 @@
 using System.Linq;
 using System.Threading.Tasks;
-using AspNetCoreTodo.Models;
+using AspNetCoreTodo.Model.ViewModel;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;

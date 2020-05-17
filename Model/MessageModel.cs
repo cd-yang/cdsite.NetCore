@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Model
+namespace AspNetCoreTodo.Model
 {
     public class MessageModel<T>
     {
