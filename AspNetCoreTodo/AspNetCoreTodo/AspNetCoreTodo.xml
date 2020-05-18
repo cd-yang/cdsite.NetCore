@@ -9,7 +9,7 @@
             博客管理
             </summary>
         </member>
-        <member name="M:AspNetCoreTodo.Controllers.BlogController.Get(System.Int32,System.Int32)">
+        <member name="M:AspNetCoreTodo.Controllers.BlogController.Get">
             <summary>
             Sum 接口
             </summary>
