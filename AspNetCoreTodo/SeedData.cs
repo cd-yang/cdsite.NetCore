@@ -4,6 +4,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
+using AspNetCoreTodo.Repository.Data;
+using AspNetCoreTodo.Model.Model;
+using System.Collections.Generic;
 
 namespace AspNetCoreTodo
 {
@@ -16,6 +19,9 @@ namespace AspNetCoreTodo
 
             var userManager = services.GetRequiredService<UserManager<IdentityUser>>();
             await EnsureTestAdminAsync(userManager);
+
+            var dbContext = services.GetRequiredService<ApplicationDbContext>();
+            EnsurePostsAsync(dbContext);
         }
 
         private static async Task EnsureRolesAsync(RoleManager<IdentityRole> roleManager)
@@ -45,6 +51,49 @@ namespace AspNetCoreTodo
             };
             await userManager.CreateAsync(testAdmin, "NotSecure123!");
             await userManager.AddToRoleAsync(testAdmin, Constants.AdministratorRole);
+        }
+
+        /// <summary>
+        /// 初始化数据库文章
+        /// </summary>
+        public static void EnsurePostsAsync(ApplicationDbContext context)
+        {
+            //context.Database.EnsureCreated();
+
+            // Look for any posts.
+            if (context.Posts.Any())
+            {
+                return;   // DB has been seeded
+            }
+
+            var author = new Author { Id = 1, Name = "CdYang", Posts = new List<Post>() };
+            var posts = new List<Post>
+            {
+                new Post
+                {
+                    Id = 1,
+                    Title = "No Code 趋势小记",
+                    Author = author,
+                    AuthorId = author.Id,
+                    Content = "前一阵子听说了一个新鲜词 No Code。直译过来就是“无码”嘛，所以第一反应是冯大辉（Fenng）的公司，然而这里写的并不是这个 >_<",
+                    CreateTime = DateTime.Parse("2019-09-01")
+                },
+                new Post
+                {
+                    Id = 2,
+                    Title = "Electron中require报错的解决与分析",
+                    Author = author,
+                    AuthorId = author.Id,
+                    Content = "环境：Electron 7 使用 Create-React-App 模板 运行时发生的错误：",
+                    CreateTime = DateTime.Parse("2019-10-01")
+                }
+
+            };
+            author.Posts.AddRange(posts);
+
+            context.Posts.AddRange(posts);
+            context.Authors.Add(author);
+            context.SaveChanges();
         }
     }
 }

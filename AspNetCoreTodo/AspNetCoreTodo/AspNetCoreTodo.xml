@@ -9,13 +9,10 @@
             博客管理
             </summary>
         </member>
-        <member name="M:AspNetCoreTodo.Controllers.BlogController.Get">
+        <member name="M:AspNetCoreTodo.SeedData.EnsurePostsAsync(AspNetCoreTodo.Repository.Data.ApplicationDbContext)">
             <summary>
-            Sum 接口
+            初始化数据库文章
             </summary>
-            <param name="i"></param>
-            <param name="j"></param>
-            <returns></returns>
         </member>
     </members>
 </doc>
