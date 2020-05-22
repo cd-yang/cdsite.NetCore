@@ -77,12 +77,12 @@ namespace AspNetCoreTodo
                 app.UseDatabaseErrorPage();
 
                 #region Swagger
-                //app.UseSwagger();
-                //app.UseSwaggerUI(c =>
-                //{
-                //    c.SwaggerEndpoint("/swagger/v1/swagger.json", "ApiHelp V1");
-                //    c.RoutePrefix = ""; // 首页显示 Swagger
-                //});
+                app.UseSwagger();
+                app.UseSwaggerUI(c =>
+                {
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "ApiHelp V1");
+                    c.RoutePrefix = ""; // 首页显示 Swagger
+                });
                 #endregion
             }
             else
