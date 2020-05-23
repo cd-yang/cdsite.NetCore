@@ -8,6 +8,8 @@ namespace AspNetCoreTodo.Repository.Data
     /// 数据库结构发生修改后，在 Repository 目录下执行:
     ///     dotnet ef migrations add MIGRATION_NAME -s ..\AspNetCoreTodo\
     ///     dotnet ef database update -s ../AspNetCoreTodo/
+    /// 
+    /// TODO: 下次 Model 变动时，将 /Data 移动到 Model 工程下
     /// </summary>
     public class ApplicationDbContext : IdentityDbContext
     {

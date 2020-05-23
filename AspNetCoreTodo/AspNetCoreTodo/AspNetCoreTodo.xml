@@ -9,6 +9,19 @@
             博客管理
             </summary>
         </member>
+        <member name="M:AspNetCoreTodo.Controllers.BlogController.Get">
+            <summary>
+            获取所有文章
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AspNetCoreTodo.Controllers.BlogController.Get(System.Int32)">
+            <summary>
+            根据 id 获取数据
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
         <member name="M:AspNetCoreTodo.SeedData.EnsurePostsAsync(AspNetCoreTodo.Repository.Data.ApplicationDbContext)">
             <summary>
             初始化数据库文章
