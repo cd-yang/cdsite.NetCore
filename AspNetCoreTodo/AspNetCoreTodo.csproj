@@ -30,4 +30,8 @@
     <ProjectReference Include="..\Service\Service.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="AOP\" />
+  </ItemGroup>
+
 </Project>

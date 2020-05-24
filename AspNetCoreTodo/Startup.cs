@@ -81,7 +81,7 @@ namespace AspNetCoreTodo
                 app.UseSwaggerUI(c =>
                 {
                     c.SwaggerEndpoint("/swagger/v1/swagger.json", "ApiHelp V1");
-                    c.RoutePrefix = ""; // 首页显示 Swagger
+                    //c.RoutePrefix = ""; // 首页显示 Swagger
                 });
                 #endregion
             }
@@ -103,7 +103,7 @@ namespace AspNetCoreTodo
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Index.html}/{id?}");
                 endpoints.MapRazorPages();
             });
         }
