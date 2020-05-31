@@ -27,7 +27,7 @@ namespace AspNetCoreTodo.Service
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public async Task<List<Post>> GetBlogs()
+        public async Task<List<Post>> GetPosts()
         {
             return await base.Query(a => a.Id > 0);
         }

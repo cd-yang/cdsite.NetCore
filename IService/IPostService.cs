@@ -6,7 +6,7 @@ namespace AspNetCoreTodo.IService
 {
     public interface IPostService : IBaseService<Post>
     {
-        Task<List<Post>> GetBlogs();
+        Task<List<Post>> GetPosts();
         Task<Post> GetPostById(int id);
     }
 }

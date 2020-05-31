@@ -1,3 +1,7 @@
+using AspNetCoreTodo.AOP;
+using AspNetCoreTodo.Repository.Data;
+using Autofac;
+using Autofac.Extras.DynamicProxy;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Hosting;
@@ -5,12 +9,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using AspNetCoreTodo.Repository.Data;
-using AspNetCoreTodo.IService;
-using AspNetCoreTodo.Service;
+using Microsoft.DotNet.PlatformAbstractions;
 using Microsoft.OpenApi.Models;
 using System;
 using System.IO;
+using System.Reflection;
 
 namespace AspNetCoreTodo
 {
@@ -43,7 +46,7 @@ namespace AspNetCoreTodo
             services.AddControllersWithViews();
             services.AddRazorPages();
 
-            services.AddScoped<ITodoItemService, TodoItemService>();
+            //services.AddScoped<ITodoItemService, TodoItemService>();
 
             #region Swagger
             services.AddSwaggerGen(c =>
@@ -106,6 +109,24 @@ namespace AspNetCoreTodo
                     pattern: "{controller=Home}/{action=Index.html}/{id?}");
                 endpoints.MapRazorPages();
             });
+        }
+
+        // Autofac
+        public void ConfigureContainer(ContainerBuilder builder)
+        {
+            var basePath = ApplicationEnvironment.ApplicationBasePath;
+
+            builder.RegisterType<BlogLogAOP>();
+            //builder.RegisterType<PostService>().As<IPostService>();
+
+            var serviceDllFile = Path.Combine(basePath, "Service.dll"); // 同 Service 工程名
+            var assemblyServices = Assembly.LoadFrom(serviceDllFile);
+
+            builder.RegisterAssemblyTypes(assemblyServices)
+                .AsImplementedInterfaces()
+                .InstancePerLifetimeScope()
+                .EnableInterfaceInterceptors()
+                .InterceptedBy(typeof(BlogLogAOP));
         }
     }
 }

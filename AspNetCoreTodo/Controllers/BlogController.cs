@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using AspNetCoreTodo.Service;
 using System.Collections.Generic;
 using AspNetCoreTodo.Model.Model;
-using AspNetCoreTodo.Repository.Data;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
+using AspNetCoreTodo.IService;
 
 namespace AspNetCoreTodo.Controllers
 {
@@ -14,11 +14,13 @@ namespace AspNetCoreTodo.Controllers
     [ApiController]
     public class BlogController : ControllerBase
     {
-        private readonly PostService _postService;
+        private readonly ILogger<BlogController> _logger;
+        private readonly IPostService _postService;
 
-        public BlogController(ApplicationDbContext context)
+        public BlogController(ILogger<BlogController> logger, IPostService postService)
         {
-            _postService = new PostService(context);
+            _logger = logger;
+            _postService = postService;
         }
 
         // GET: api/Blog
@@ -29,7 +31,8 @@ namespace AspNetCoreTodo.Controllers
         [HttpGet]
         public async Task<List<Post>> Get()
         {
-            return await _postService.GetBlogs();
+            _logger.LogInformation("test Get log");
+            return await _postService.GetPosts();
         }
 
         // GET: api/Blog/5

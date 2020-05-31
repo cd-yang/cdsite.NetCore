@@ -1,12 +1,5 @@
-using System;
-using System.Threading.Tasks;
-using AspNetCoreTodo.Repository.Data;
-using AspNetCoreTodo.Model;
-using AspNetCoreTodo.Service;
-using Microsoft.EntityFrameworkCore;
 using Xunit;
 //using Microsoft.EntityFrameworkCore.InMemory;
-using Microsoft.AspNetCore.Identity;
 
 namespace AspNetCoreTodo.UnitTests
 {
