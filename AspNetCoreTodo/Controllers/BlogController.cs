@@ -4,6 +4,7 @@ using AspNetCoreTodo.Model.Model;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using AspNetCoreTodo.IService;
+using AspNetCoreTodo.Model;
 
 namespace AspNetCoreTodo.Controllers
 {
@@ -29,10 +30,22 @@ namespace AspNetCoreTodo.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public async Task<List<Post>> Get()
+        public async Task<MessageModel<PageModel<Post>>> Get()
         {
             _logger.LogInformation("test Get log");
-            return await _postService.GetPosts();
+            var posts = await _postService.GetPosts();
+            return new MessageModel<PageModel<Post>>()
+            {
+                Success = true,
+                Msg = "获取成功",
+                Response = new PageModel<Post>()
+                {
+                    //Page = page,
+                    DataCount = posts.Count,
+                    Data = posts,
+                    //PageCount = posts.Count,
+                }
+            };
         }
 
         // GET: api/Blog/5
