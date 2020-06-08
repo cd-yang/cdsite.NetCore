@@ -14,11 +14,11 @@ namespace AspNetCoreTodo.Model
         /// <summary>
         /// 总页数
         /// </summary>
-        public int PageCount { get; set; } = 6;
+        public int PageCount { get; set; } = 1;
         /// <summary>
         /// 数据总数
         /// </summary>
-        public int DataCount { get; set; } = 0;
+        public int DataCount { get; set; }
         /// <summary>
         /// 每页大小
         /// </summary>

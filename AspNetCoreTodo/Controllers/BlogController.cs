@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
 using AspNetCoreTodo.Model.Model;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using AspNetCoreTodo.IService;
 using AspNetCoreTodo.Model;
+using AspNetCoreTodo.Model.ViewModel;
 
 namespace AspNetCoreTodo.Controllers
 {
@@ -26,13 +26,12 @@ namespace AspNetCoreTodo.Controllers
 
         // GET: api/Blog
         /// <summary>
-        /// 获取所有文章
+        /// 按 page 获取文章
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public async Task<MessageModel<PageModel<Post>>> Get()
+        public async Task<MessageModel<PageModel<Post>>> Get(int id, int page = 1)
         {
-            _logger.LogInformation("test Get log");
             var posts = await _postService.GetPosts();
             return new MessageModel<PageModel<Post>>()
             {
@@ -40,24 +39,37 @@ namespace AspNetCoreTodo.Controllers
                 Msg = "获取成功",
                 Response = new PageModel<Post>()
                 {
-                    //Page = page,
+                    Page = page,
                     DataCount = posts.Count,
                     Data = posts,
-                    //PageCount = posts.Count,
+                    PageCount = 5,  // TODO: 换成真实页数
                 }
             };
         }
 
         // GET: api/Blog/5
         /// <summary>
-        /// 根据 id 获取数据
+        /// 根据 id 获取 Post 页面数据
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet("{id}", Name = "Get")]
-        public async Task<Post> Get(int id)
+        public async Task<MessageModel<PostViewModel>> Get(int id)
         {
-            return await _postService.GetPostById(id);
+            var post = await _postService.GetPostById(id);
+            return new MessageModel<PostViewModel>()
+            {
+                Success = true,
+                Msg = "获取成功",
+                Response = new PostViewModel()
+                {
+                    Id = post.Id,
+                    Title = post.Title,
+                    Content = post.Content,
+                    CreateOnUtc = post.CreateOnUtc,
+                    PubDateUtc = post.PubDateUtc ?? post.CreateOnUtc
+                }
+            };
         }
 
         // POST: api/Blog

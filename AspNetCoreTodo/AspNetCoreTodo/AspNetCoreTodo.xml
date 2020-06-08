@@ -9,15 +9,15 @@
             博客管理
             </summary>
         </member>
-        <member name="M:AspNetCoreTodo.Controllers.BlogController.Get">
+        <member name="M:AspNetCoreTodo.Controllers.BlogController.Get(System.Int32,System.Int32)">
             <summary>
-            获取所有文章
+            按 page 获取文章
             </summary>
             <returns></returns>
         </member>
         <member name="M:AspNetCoreTodo.Controllers.BlogController.Get(System.Int32)">
             <summary>
-            根据 id 获取数据
+            根据 id 获取 Post 页面数据
             </summary>
             <param name="id"></param>
             <returns></returns>
