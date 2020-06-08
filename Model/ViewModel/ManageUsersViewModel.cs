@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 
-namespace AspNetCoreTodo.Model.ViewModel
+namespace CdSite.Model.ViewModel
 {
     public class ManageUsersViewModel
     {

@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using AspNetCoreTodo.Model.Model;
+using CdSite.Model.Model;
 
-namespace AspNetCoreTodo.IService
+namespace CdSite.IService
 {
     public interface IPostService : IBaseService<Post>
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace AspNetCoreTodo.Repository.Data.Migrations
+namespace CdSite.Repository.Data.Migrations
 {
     public partial class AddItems : Migration
     {

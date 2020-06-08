@@ -1,4 +1,4 @@
-﻿namespace AspNetCoreTodo.IService
+﻿namespace CdSite.IService
 {
     public interface IAdvertisementService
     {

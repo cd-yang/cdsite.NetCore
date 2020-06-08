@@ -1,6 +1,6 @@
-﻿using AspNetCoreTodo.Model.Model;
+﻿using CdSite.Model.Model;
 
-namespace AspNetCoreTodo.IRepository
+namespace CdSite.IRepository
 {
     public interface IPostRepository : IBaseRepository<Post>
     {

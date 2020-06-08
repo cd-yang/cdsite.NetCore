@@ -1,8 +1,8 @@
-﻿using AspNetCoreTodo.IRepository;
-using AspNetCoreTodo.IService;
-using AspNetCoreTodo.Repository;
+﻿using CdSite.IRepository;
+using CdSite.IService;
+using CdSite.Repository;
 
-namespace AspNetCoreTodo.Service
+namespace CdSite.Service
 {
     public class AdvertisementService : IAdvertisementService
     {

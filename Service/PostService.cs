@@ -1,10 +1,10 @@
-using AspNetCoreTodo.Repository.Data;
-using AspNetCoreTodo.IService;
-using AspNetCoreTodo.Model.Model;
+using CdSite.Repository.Data;
+using CdSite.IService;
+using CdSite.Model.Model;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace AspNetCoreTodo.Service
+namespace CdSite.Service
 {
     public class PostService : BaseService<Post>, IPostService
     {

@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AspNetCoreTodo</name>
+    </assembly>
+    <members>
+        <member name="T:CdSite.Controllers.BlogController">
+            <summary>
+            博客管理
+            </summary>
+        </member>
+        <member name="M:CdSite.Controllers.BlogController.Get(System.Int32,System.Int32)">
+            <summary>
+            按 page 获取文章
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CdSite.Controllers.BlogController.Get(System.Int32)">
+            <summary>
+            根据 id 获取 Post 页面数据
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CdSite.SeedData.EnsurePostsAsync(CdSite.Repository.Data.ApplicationDbContext)">
+            <summary>
+            初始化数据库文章
+            </summary>
+        </member>
+    </members>
+</doc>

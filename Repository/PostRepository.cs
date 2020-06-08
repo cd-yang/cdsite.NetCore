@@ -1,9 +1,9 @@
-﻿using AspNetCoreTodo.IRepository;
-using AspNetCoreTodo.Model.Model;
-using AspNetCoreTodo.Repository.Data;
+﻿using CdSite.IRepository;
+using CdSite.Model.Model;
+using CdSite.Repository.Data;
 using Repository;
 
-namespace AspNetCoreTodo.Repository
+namespace CdSite.Repository
 {
     public class PostRepository : BaseRepository<Post>, IPostRepository
     {

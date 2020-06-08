@@ -1,9 +1,9 @@
-﻿using AspNetCoreTodo.Model.Model;
+﻿using CdSite.Model.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 
-namespace AspNetCoreTodo.IRepository
+namespace CdSite.IRepository
 {
     public interface IAdvertisementRepository
     {

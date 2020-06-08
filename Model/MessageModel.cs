@@ -1,4 +1,4 @@
-﻿namespace AspNetCoreTodo.Model
+﻿namespace CdSite.Model
 {
     /// <summary>
     /// 通用返回信息类

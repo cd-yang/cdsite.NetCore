@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace AspNetCoreTodo.IRepository
+namespace CdSite.IRepository
 {
     public interface IBaseRepository<TEntity> where TEntity : class
     {

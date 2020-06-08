@@ -1,6 +1,6 @@
-using AspNetCoreTodo.Model.Model;
+using CdSite.Model.Model;
 
-namespace AspNetCoreTodo.Model.ViewModel
+namespace CdSite.Model.ViewModel
 {
     public class TodoViewModel
     {

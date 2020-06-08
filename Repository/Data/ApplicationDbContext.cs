@@ -1,20 +1,20 @@
-﻿using AspNetCoreTodo.Model.Model;
+﻿using CdSite.Model.Model;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace AspNetCoreTodo.Repository.Data
+namespace CdSite.Repository.Data
 {
     /// <summary>
     /// 数据库结构发生修改后，在 Repository 目录下执行:
-    ///     dotnet ef migrations add MIGRATION_NAME -s ..\AspNetCoreTodo\
-    ///     dotnet ef database update -s ../AspNetCoreTodo/
+    ///     dotnet ef migrations add MIGRATION_NAME -s ..\CdSite\
+    ///     dotnet ef database update -s ../CdSite/
     /// 
     /// 若有字段删除，报错：SQLite does not support this migration operation ('DropColumnOperation')
     /// 解决方案：
     ///     1: remove current database
-    ///     2. dotnet ef migrations remove -s ../AspNetCoreTodo/
-    ///     3. dotnet ef migrations add initialCommit -s ../AspNetCoreTodo/
-    ///     4: dotnet ef database update -s ../AspNetCoreTodo/
+    ///     2. dotnet ef migrations remove -s ../CdSite/
+    ///     3. dotnet ef migrations add initialCommit -s ../CdSite/
+    ///     4: dotnet ef database update -s ../CdSite/
     /// /// 
     /// TODO: 下次 Model 变动时，将 /Data 移动到 Model 工程下
     /// </summary>

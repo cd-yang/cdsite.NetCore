@@ -1,13 +1,13 @@
 using System;
 using System.Threading.Tasks;
-using AspNetCoreTodo.Repository.Data;
-using AspNetCoreTodo.IService;
+using CdSite.Repository.Data;
+using CdSite.IService;
 using System.Collections.Generic;
 using System.Linq.Expressions;
-using AspNetCoreTodo.IRepository;
+using CdSite.IRepository;
 using Repository;
 
-namespace AspNetCoreTodo.Service
+namespace CdSite.Service
 {
     public class BaseService<TEntity> : IBaseService<TEntity> where TEntity : class, new()
     {

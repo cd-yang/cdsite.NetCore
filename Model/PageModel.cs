@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace AspNetCoreTodo.Model
+namespace CdSite.Model
 {
     /// <summary>
     /// 通用分页信息类

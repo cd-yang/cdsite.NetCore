@@ -1,4 +1,4 @@
-﻿namespace AspNetCoreTodo.Model
+﻿namespace CdSite.Model
 {
     class TableModel
     {

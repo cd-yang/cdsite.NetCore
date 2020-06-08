@@ -1,6 +1,6 @@
 using System;
 
-namespace AspNetCoreTodo.Model.ViewModel
+namespace CdSite.Model.ViewModel
 {
     public class PostViewModel
     {
@@ -25,15 +25,15 @@ namespace AspNetCoreTodo.Model.ViewModel
         /// <summary>
         /// 下一篇id
         /// </summary>
-        public int NextID { get; set; }
+        public int NextId { get; set; }
 
-        /// <summary>类别
-        /// 
+        /// <summary>
+        /// 类别 
         /// </summary>
         //public string Category { get; set; }
 
-        /// <summary>内容
-        /// 
+        /// <summary>
+        /// 内容 
         /// </summary>
         public string Content { get; set; }
 

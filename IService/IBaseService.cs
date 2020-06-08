@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace AspNetCoreTodo.IService
+namespace CdSite.IService
 {
     public interface IBaseService<TEntity> where TEntity : class
     {

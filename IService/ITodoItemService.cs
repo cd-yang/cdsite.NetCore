@@ -1,9 +1,9 @@
 using System;
 using System.Threading.Tasks;
-using AspNetCoreTodo.Model.Model;
+using CdSite.Model.Model;
 using Microsoft.AspNetCore.Identity;
 
-namespace AspNetCoreTodo.IService
+namespace CdSite.IService
 {
     public interface ITodoItemService
     {
