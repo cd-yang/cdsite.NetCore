@@ -9,6 +9,13 @@ namespace AspNetCoreTodo.Repository.Data
     ///     dotnet ef migrations add MIGRATION_NAME -s ..\AspNetCoreTodo\
     ///     dotnet ef database update -s ../AspNetCoreTodo/
     /// 
+    /// 若有字段删除，报错：SQLite does not support this migration operation ('DropColumnOperation')
+    /// 解决方案：
+    ///     1: remove current database
+    ///     2. dotnet ef migrations remove -s ../AspNetCoreTodo/
+    ///     3. dotnet ef migrations add initialCommit -s ../AspNetCoreTodo/
+    ///     4: dotnet ef database update -s ../AspNetCoreTodo/
+    /// /// 
     /// TODO: 下次 Model 变动时，将 /Data 移动到 Model 工程下
     /// </summary>
     public class ApplicationDbContext : IdentityDbContext

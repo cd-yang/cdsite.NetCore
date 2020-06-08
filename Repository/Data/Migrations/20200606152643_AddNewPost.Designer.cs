@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AspNetCoreTodo.Repository.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200519234345_AddAuthorPost")]
-    partial class AddAuthorPost
+    [Migration("20200606152643_AddNewPost")]
+    partial class AddNewPost
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -41,10 +41,37 @@ namespace AspNetCoreTodo.Repository.Data.Migrations
                     b.Property<int>("AuthorId")
                         .HasColumnType("INTEGER");
 
+                    b.Property<bool>("CommentEnabled")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("Content")
                         .HasColumnType("TEXT");
 
-                    b.Property<DateTime>("CreateTime")
+                    b.Property<string>("ContentAbstract")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ContentLanguageCode")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ContentMarkdown")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("CreateOnUtc")
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("ExposedToSiteMap")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("FeedIncluded")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("IsPublished")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime?>("PubDateUtc")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Slug")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Title")

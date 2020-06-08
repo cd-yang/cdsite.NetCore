@@ -73,19 +73,25 @@ namespace AspNetCoreTodo
                 {
                     Id = 1,
                     Title = "No Code 趋势小记",
+                    Slug = "nocode-trend",
                     Author = author,
                     AuthorId = author.Id,
-                    Content = "前一阵子听说了一个新鲜词 No Code。直译过来就是“无码”嘛，所以第一反应是冯大辉（Fenng）的公司，然而这里写的并不是这个 >_<",
-                    CreateTime = DateTime.Parse("2019-09-01")
+                    ContentAbstract = "前一阵子听说了一个新鲜词 No Code。直译过来就是“无码”嘛，所以第一反应是冯大辉（Fenng）的公司，然而这里写的并不是这个 >_<",
+                    CreateOnUtc = DateTime.Parse("2020-03-15"),
+                    PubDateUtc = DateTime.Parse("2020-03-15"),
+                    IsPublished = true
                 },
                 new Post
                 {
                     Id = 2,
                     Title = "Electron中require报错的解决与分析",
+                    Slug = "electron-require-error",
                     Author = author,
                     AuthorId = author.Id,
-                    Content = "环境：Electron 7 使用 Create-React-App 模板 运行时发生的错误：",
-                    CreateTime = DateTime.Parse("2019-10-01")
+                    ContentAbstract = "环境：Electron 7 使用 Create-React-App 模板 运行时发生的错误：",
+                    CreateOnUtc = DateTime.Parse("2020-03-09"),
+                    PubDateUtc = DateTime.Parse("2020-03-15"),
+                    IsPublished = true
                 }
 
             };
