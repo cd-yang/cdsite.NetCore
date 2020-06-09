@@ -57,30 +57,39 @@ namespace CdSite.Controllers
         public async Task<MessageModel<PostViewModel>> Get(int id)
         {
             var post = await _postService.GetPostById(id);
-            if (post != null)
-                return new MessageModel<PostViewModel>()
-                {
-                    Success = true,
-                    Msg = "获取成功",
-                    Response = new PostViewModel()
-                    {
-                        Id = post.Id,
-                        Title = post.Title,
-                        Content = post.Content,
-                        CreateOnUtc = post.CreateOnUtc,
-                        PubDateUtc = post.PubDateUtc ?? post.CreateOnUtc,
-                        Previous = "123",
-                        PreviousId = 1,
-                        Next = "qwer",
-                        NextId = 3
-                    }
-                };
-            else
+            if (post == null)
                 return new MessageModel<PostViewModel>
                 {
                     Success = false,
                     Msg = "未获取到该文章"
                 };
+
+            var postVm = new PostViewModel()
+            {
+                Id = post.Id,
+                Title = post.Title,
+                Content = post.Content,
+                CreateOnUtc = post.CreateOnUtc,
+                PubDateUtc = post.PubDateUtc ?? post.CreateOnUtc,
+            };
+            var prePost = await _postService.GetPostById(id - 1);
+            if (prePost != null)
+            {
+                postVm.Previous = prePost.Title;
+                postVm.PreviousId = prePost.Id;
+            }
+            var nextPost = await _postService.GetPostById(id + 1);
+            if (nextPost != null)
+            {
+                postVm.Next = nextPost.Title;
+                postVm.NextId = nextPost.Id;
+            }
+            return new MessageModel<PostViewModel>()
+            {
+                Success = true,
+                Msg = "获取成功",
+                Response = postVm
+            };
         }
 
         // POST: api/Blog
