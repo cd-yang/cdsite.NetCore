@@ -358,4 +358,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
-AspNetCoreTodo/app.db
+
+# database
+app.db
