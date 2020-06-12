@@ -47,16 +47,16 @@ namespace CdSite.Controllers
             };
         }
 
-        // GET: api/Blog/5
+        // GET: api/Blog/slug
         /// <summary>
-        /// 根据 id 获取 Post 页面数据
+        /// 根据 slug 获取 Post 页面数据
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="slug"></param>
         /// <returns></returns>
-        [HttpGet("{id}", Name = "Get")]
-        public async Task<MessageModel<PostViewModel>> Get(int id)
+        [HttpGet("{slug}", Name = "Get")]
+        public async Task<MessageModel<PostViewModel>> Get(string slug)
         {
-            var post = await _postService.GetPostById(id);
+            var post = await _postService.GetPostBySlug(slug);
             if (post == null)
                 return new MessageModel<PostViewModel>
                 {
@@ -72,17 +72,21 @@ namespace CdSite.Controllers
                 CreateOnUtc = post.CreateOnUtc,
                 PubDateUtc = post.PubDateUtc ?? post.CreateOnUtc,
             };
+
+            var id = post.Id;
             var prePost = await _postService.GetPostById(id - 1);
             if (prePost != null)
             {
                 postVm.Previous = prePost.Title;
-                postVm.PreviousId = prePost.Id;
+                postVm.PreviousSlug = prePost.Slug;
+                postVm.PreviousCreateOnUtc = prePost.CreateOnUtc;
             }
             var nextPost = await _postService.GetPostById(id + 1);
             if (nextPost != null)
             {
                 postVm.Next = nextPost.Title;
-                postVm.NextId = nextPost.Id;
+                postVm.NextSlug = nextPost.Slug;
+                postVm.NextCreateOnUtc = nextPost.CreateOnUtc;
             }
             return new MessageModel<PostViewModel>()
             {

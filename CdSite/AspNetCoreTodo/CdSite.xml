@@ -15,11 +15,11 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:CdSite.Controllers.BlogController.Get(System.Int32)">
+        <member name="M:CdSite.Controllers.BlogController.Get(System.String)">
             <summary>
-            根据 id 获取 Post 页面数据
+            根据 slug 获取 Post 页面数据
             </summary>
-            <param name="id"></param>
+            <param name="slug"></param>
             <returns></returns>
         </member>
         <member name="M:CdSite.SeedData.EnsurePostsAsync(CdSite.Repository.Data.ApplicationDbContext)">

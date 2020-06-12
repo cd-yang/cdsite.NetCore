@@ -8,5 +8,6 @@ namespace CdSite.IService
     {
         Task<List<Post>> GetPosts();
         Task<Post> GetPostById(int id);
+        Task<Post> GetPostBySlug(string slug);
     }
 }

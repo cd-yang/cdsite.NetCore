@@ -13,9 +13,14 @@ namespace CdSite.Model.ViewModel
         public string Previous { get; set; }
 
         /// <summary>
-        /// 上一篇id
+        /// 上一篇 Slug
         /// </summary>
-        public int PreviousId { get; set; }
+        public string PreviousSlug { get; set; }
+
+        /// <summary>
+        /// 上一篇 CreateOnUtc
+        /// </summary>
+        public DateTime PreviousCreateOnUtc { get; set; }
 
         /// <summary>
         /// 下一篇
@@ -23,9 +28,14 @@ namespace CdSite.Model.ViewModel
         public string Next { get; set; }
 
         /// <summary>
-        /// 下一篇id
+        /// 下一篇 Slug
         /// </summary>
-        public int NextId { get; set; }
+        public string NextSlug { get; set; }
+
+        /// <summary>
+        /// 下一篇CreateOnUtc
+        /// </summary>
+        public DateTime NextCreateOnUtc { get; set; }
 
         /// <summary>
         /// 类别 
