@@ -19,8 +19,4 @@
     </PackageReference>
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\AspNetCoreTodo\CdSite.csproj" />
-  </ItemGroup>
-
 </Project>
