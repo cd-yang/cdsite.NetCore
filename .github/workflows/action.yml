@@ -1,5 +1,0 @@
-name: Setup .NET 3.x
-uses: actions/setup-dotnet@v2
-with:
-# Semantic version range syntax or exact version of a dotnet version
-dotnet-version: '3.x' 
