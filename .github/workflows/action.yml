@@ -1,8 +1,6 @@
-name: Setup .NET Core SDK
-uses: actions/setup-dotnet@v1.7.2
-
-
 name: dotnet package
+
+uses: actions/setup-dotnet@v1.7.2
 
 on: [push]
 
