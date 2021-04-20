@@ -18,7 +18,7 @@ jobs:
       with:
         dotnet-version: 5.0.x
     - name: Dotnet Publish
-      run: dotnet publish CdSite -c Release -o deploy
+      run: dotnet publish CdSite -c Release -o deploy --no-self-contained
     - name: Copy via ssh
       uses: garygrossgarten/github-action-scp@release
       with:
