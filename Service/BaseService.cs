@@ -79,7 +79,7 @@ namespace CdSite.Service
         }
 
         /// <summary>
-        /// ¸ù¾Ý ID ²éÑ¯Ò»ÌõÊý¾Ý
+        /// æ ¹æ® ID æŸ¥è¯¢ä¸€æ¡æ•°æ®
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>

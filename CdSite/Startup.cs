@@ -55,7 +55,7 @@ namespace CdSite
                 {
                     Version = "v0.0.1",
                     Title = "Todo Tool API",
-                    Description = "¿ò¼ÜËµÃ÷ÎÄµµ",
+                    Description = "æ¡†æ¶è¯´æ˜æ–‡æ¡£",
                     TermsOfService = new Uri("https://cd-yang.com"),
                     Contact = new OpenApiContact
                     {
@@ -84,7 +84,7 @@ namespace CdSite
                 app.UseSwaggerUI(c =>
                 {
                     c.SwaggerEndpoint("/swagger/v1/swagger.json", "ApiHelp V1");
-                    //c.RoutePrefix = ""; // Ê×Ò³ÏÔÊ¾ Swagger
+                    //c.RoutePrefix = ""; // é¦–é¡µæ˜¾ç¤º Swagger
                 });
                 #endregion
             }
@@ -119,7 +119,7 @@ namespace CdSite
             builder.RegisterType<BlogLogAOP>();
             //builder.RegisterType<PostService>().As<IPostService>();
 
-            var serviceDllFile = Path.Combine(basePath, "Service.dll"); // Í¬ Service ¹¤³ÌÃû
+            var serviceDllFile = Path.Combine(basePath, "Service.dll"); // åŒ Service å·¥ç¨‹å
             var assemblyServices = Assembly.LoadFrom(serviceDllFile);
 
             builder.RegisterAssemblyTypes(assemblyServices)

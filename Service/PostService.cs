@@ -14,7 +14,7 @@ namespace CdSite.Service
         }
 
         /// <summary>
-        /// 根据 Id 获取文章
+        /// 鏍规嵁 Id 鑾峰彇鏂囩珷
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
@@ -24,7 +24,7 @@ namespace CdSite.Service
         }
 
         /// <summary>
-        /// 根据 Slug 获取文章
+        /// 鏍规嵁 Slug 鑾峰彇鏂囩珷
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
@@ -34,7 +34,7 @@ namespace CdSite.Service
         }
 
         /// <summary>
-        /// 获取博客列表
+        /// 鑾峰彇鍗氬鍒楄〃
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
