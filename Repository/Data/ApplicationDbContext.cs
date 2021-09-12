@@ -1,4 +1,5 @@
 ﻿using CdSite.Model.Model;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,7 +19,7 @@ namespace CdSite.Repository.Data
     /// /// 
     /// TODO: 下次 Model 变动时，将 /Data 移动到 Model 工程下
     /// </summary>
-    public class ApplicationDbContext : IdentityDbContext
+    public class ApplicationDbContext : IdentityDbContext<IdentityUser>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)

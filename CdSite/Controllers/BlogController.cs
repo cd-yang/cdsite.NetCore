@@ -69,6 +69,7 @@ namespace CdSite.Controllers
                 Id = post.Id,
                 Title = post.Title,
                 Content = post.Content,
+                ContentMarkdown = post.ContentMarkdown,
                 CreateOnUtc = post.CreateOnUtc,
                 PubDateUtc = post.PubDateUtc ?? post.CreateOnUtc,
             };

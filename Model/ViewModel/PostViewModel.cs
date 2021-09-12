@@ -8,57 +8,62 @@ namespace CdSite.Model.ViewModel
         public string Title { get; set; }
 
         /// <summary>
-        /// ÉÏÒ»Æª
+        /// ä¸Šä¸€ç¯‡
         /// </summary>
         public string Previous { get; set; }
 
         /// <summary>
-        /// ÉÏÒ»Æª Slug
+        /// ä¸Šä¸€ç¯‡ Slug
         /// </summary>
         public string PreviousSlug { get; set; }
 
         /// <summary>
-        /// ÉÏÒ»Æª CreateOnUtc
+        /// ä¸Šä¸€ç¯‡ CreateOnUtc
         /// </summary>
         public DateTime PreviousCreateOnUtc { get; set; }
 
         /// <summary>
-        /// ÏÂÒ»Æª
+        /// ä¸‹ä¸€ç¯‡
         /// </summary>
         public string Next { get; set; }
 
         /// <summary>
-        /// ÏÂÒ»Æª Slug
+        /// ä¸‹ä¸€ç¯‡ Slug
         /// </summary>
         public string NextSlug { get; set; }
 
         /// <summary>
-        /// ÏÂÒ»ÆªCreateOnUtc
+        /// ä¸‹ä¸€ç¯‡CreateOnUtc
         /// </summary>
         public DateTime NextCreateOnUtc { get; set; }
 
         /// <summary>
-        /// Àà±ğ 
+        /// ç±»åˆ« 
         /// </summary>
         //public string Category { get; set; }
+        
+        /// <summary>
+        /// markdown æ ¼å¼å†…å®¹ï¼Œæ–°æ–‡ç« ä½¿ç”¨æ­¤æ ¼å¼
+        /// </summary>
+        public string ContentMarkdown { get; set; }
 
         /// <summary>
-        /// ÄÚÈİ 
+        /// å†…å®¹ï¼ˆè€æ–‡ç« ï¼‰
         /// </summary>
         public string Content { get; set; }
 
         /// <summary>
-        /// ·ÃÎÊÁ¿
+        /// è®¿é—®é‡
         /// </summary>
         public int Traffic { get; set; }
 
         /// <summary>
-        /// ĞŞ¸ÄÊ±¼ä 
+        /// ä¿®æ”¹æ—¶é—´ 
         /// </summary>
         public DateTime PubDateUtc { get; set; }
 
         /// <summary>
-        /// ´´½¨Ê±¼ä
+        /// åˆ›å»ºæ—¶é—´
         /// </summary>
         public DateTime CreateOnUtc { get; set; }
     }
