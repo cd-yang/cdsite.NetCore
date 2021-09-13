@@ -5,6 +5,7 @@ using Microsoft.Extensions.Logging;
 using CdSite.IService;
 using CdSite.Model;
 using CdSite.Model.ViewModel;
+using Blog.Core.Common.LogHelper;
 
 namespace CdSite.Controllers
 {
@@ -33,17 +34,19 @@ namespace CdSite.Controllers
         public async Task<MessageModel<PageModel<Post>>> Get(int id, int page = 1)
         {
             var posts = await _postService.GetPosts();
+            var vm = new PageModel<Post>()
+            {
+                Page = page,
+                DataCount = posts.Count,
+                Data = posts,
+                PageCount = 5,  // TODO: 换成真实页数
+            };
+            LogLock.OutSql2Log("BlogController", new string[] { "GetPosts", vm.ToString() });
             return new MessageModel<PageModel<Post>>()
             {
                 Success = true,
                 Msg = "获取成功",
-                Response = new PageModel<Post>()
-                {
-                    Page = page,
-                    DataCount = posts.Count,
-                    Data = posts,
-                    PageCount = 5,  // TODO: 换成真实页数
-                }
+                Response = vm
             };
         }
 
@@ -58,11 +61,14 @@ namespace CdSite.Controllers
         {
             var post = await _postService.GetPostBySlug(slug);
             if (post == null)
+            {
+                LogLock.OutSql2Log("BlogController", new string[] { "GetPostBySlug", "未获取到该文章", "slug: " + slug });
                 return new MessageModel<PostViewModel>
                 {
                     Success = false,
                     Msg = "未获取到该文章"
                 };
+            }
 
             var postVm = new PostViewModel()
             {
@@ -89,6 +95,7 @@ namespace CdSite.Controllers
                 postVm.NextSlug = nextPost.Slug;
                 postVm.NextCreateOnUtc = nextPost.CreateOnUtc;
             }
+            LogLock.OutSql2Log("BlogController", new string[] { "GetPostBySlug", postVm.ToString() });
             return new MessageModel<PostViewModel>()
             {
                 Success = true,
